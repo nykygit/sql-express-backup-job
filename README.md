@@ -1,6 +1,6 @@
 # sql-express-backup-job
 
-SQL Express doesn't have a SQL Agent to schedule jobs like Standard Enterprise or Developer Edition.  These scripts allow you to easily backup all databases on a SQL Express instance.  We use Windows Task Scheduler to execute SQL via command line.
+SQL Server Express Edition doesn't have a SQL Agent Service to schedule jobs like SQL Server Standard, Enterprise, or Developer Edition.  These scripts allow you to easily backup all databases on a SQL Express instance.  We use Windows Task Scheduler to execute SQL via command line.
 
 ## Disclaimer
 
