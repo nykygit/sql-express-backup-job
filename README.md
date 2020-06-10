@@ -4,8 +4,16 @@ SQL Server Express Edition doesn't have a SQL Agent Service to schedule jobs lik
 
 ## Disclaimer
 
-The script contains the SQL Login + Password of a SQL Login with db_backupoperator role in clear text.  The Script, Windows Task, SQL Express Database Engine, SQL Database Files, and Backup File Output are all being run on the same server.  We are trusting that the server  is secure - physical access, network access, operating system access.  If you have specific security requirements, then modify things as needed.
+The sqlbackup_basic.bat script contains the SQL Login + Password of a SQL Login with db_backupoperator role in clear text.  If the Script, Windows Task, SQL Express Database Engine, SQL Database Files, and Backup File Output are all being run on the same server, we are trusting that the server  is secure - physical access, network access, operating system access.  If you have specific security requirements, then modify things as needed.
+
+The sqlbackup_integrated.bat script is the preferred way to configure this.  This essentially runs SQLCMD as the user.  You have 3 options for creating a User/Service Account to run the task.  All 3 options are respectable, but the last option emphasizes security because there is no visible password involved.  I've attached 3 Powershell scripts for each of these options.
+
+1. Create a Local User and run the Windows Task as the Local User.
+2. Create a Domain User and run the Windows Task as a Domain User.
+3. Create a Domain Managed Service Account and run the Windows Task as a the Service Account.
 
 ## Feature Limitations
 
-This is a simple backup solution.  The backup files automatically get overwritten.  The retention of the backup files = the frequency of the Task Schedule.  This can be useful if the actual backup file or database get's corrupted, or primary physical disk dies, etc.  If you have additional needs, please modify.
+- This is a simple backup solution.
+- The backup files automatically get overwritten.
+- The retention of the backup files = the frequency of the Task Schedule.  This can be useful if the actual backup file or database get's corrupted, or primary physical disk dies, etc.  If you have additional needs, please modify.
