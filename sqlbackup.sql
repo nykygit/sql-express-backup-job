@@ -19,7 +19,7 @@ RETENTION OPTIONS
 5. 1 BAK file for each month of the year (schedule this as often as you want, but at least once a month to retain monthly)
 6. Classic GFS setup, daily for 1 week, weekly for 1 month, monthly for 1 year, 1 end of year, never overwrite...you will run out of disk space eventually
 
-Note - Retention is achieved by Overwriting files, not by Deletes.
+Note - Retention is achieved by File Naming + Overwriting files, not by Deletes.
 */
 
 /* ========================================
