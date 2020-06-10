@@ -1,22 +1,26 @@
 /* ========================================
-BACKUP FILE RETENTION OPTIONS
-1. 1 BAK file for each database, overwrite each time - dbName.BAK (schedule this as often as you want)
-2. 1 BAK file for each database + each day of the week - dbName_Monday.BAK, dbname_Tuesday.BAK, etc.. (schedule this daily)
-3. 1 BAK file for each database + each day of the month - dbName_1.BAK, dbName_2.BAK, etc...to 31.BAK (schedule this daily)
-4. 1 BAK file for each week of the year (schedule this as often as you want, eg daily, but at least once a week)
+CONFIG
 ======================================== */
-
-DECLARE @RetentionMethod int
-SET @RetentionMethod = 1
-
-/* ========== RUNTIME ========== */
 
 DECLARE @ProdDatabaseName varchar(256)
 DECLARE @ProdDatabasePath varchar(256)
 DECLARE @ProdDatabaseFileName varchar(256)
+DECLARE @RetentionMethod int
 
 SET @ProdDatabasePath = 'C:\SQLBACKUP\'
+SET @RetentionMethod = 1
 
+/*
+RETENTION OPTIONS
+1. 1 BAK file for each database, overwrite each time - dbName.BAK (schedule this as often as you want)
+2. 1 BAK file for each database + each day of the week - dbName_Monday.BAK, dbname_Tuesday.BAK, etc.. (schedule this daily)
+3. 1 BAK file for each database + each day of the month - dbName_1.BAK, dbName_2.BAK, etc...to 31.BAK (schedule this daily)
+4. 1 BAK file for each week of the year (schedule this as often as you want, eg daily, but at least once a week)
+*/
+
+/* ========================================
+RUNTIME
+======================================== */
 
 DECLARE c1 CURSOR READ_ONLY FOR
   SELECT name
