@@ -11,5 +11,4 @@ The sqlbackup_integrated.bat script is the preferred option.  This runs the SQLC
 ## Feature Limitations
 
 - This is a simple backup solution.
-- The backup files automatically get overwritten.
-- The retention of the backup files = the frequency of the Task Schedule.
+- The backup files automatically get overwritten by default.  Modify the options in the SQL Script to configure various simple retention options.
