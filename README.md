@@ -16,4 +16,4 @@ The sqlbackup_integrated.bat script is the preferred way to configure this.  Thi
 
 - This is a simple backup solution.
 - The backup files automatically get overwritten.
-- The retention of the backup files = the frequency of the Task Schedule.  This can be useful if the actual backup file or database get's corrupted, or primary physical disk dies, etc.  If you have additional needs, please modify.
+- The retention of the backup files = the frequency of the Task Schedule.
